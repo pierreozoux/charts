@@ -41,6 +41,7 @@ The following tables lists the configurable parameters of the Datadog chart and 
 |-----------------------------|------------------------------------|-------------------------------------------|
 | `scalyr.apiKey`             | Your Scalyr API key               |  `Nil` You must provide your own key      |
 | `scalyr.config.reportContainerMetrics` | Report container metrics. | `false`                                 |
+| `scalyr.config.server_attributes` | Additional attributes to provide with logs | Optional, You may provide your own value |
 | `image.repository`          | The image repository to pull from  | `datadog/docker-dd-agent`                 |
 | `image.tag`                 | The image tag to pull              | `latest`                                  |
 | `imagePullPolicy`           | Image pull policy                  | `IfNotPresent`                            |
@@ -55,6 +56,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
     --set scalyr.apiKey=YOUR-KEY-HERE \
+    --set scalyr.config.server_attributes.serverHost=app-server-3 \
     stable/scalyr
 ```
 

@@ -11,6 +11,9 @@ scalyr:
   # apiKey:
   config:
     reportContainerMetrics: false
+#    server_attributes:
+#      ENV: staging
+#      APP: iqb
 
 # resources:
 #   requests:

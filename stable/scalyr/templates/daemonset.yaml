@@ -23,7 +23,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{- if .Values.resources}}
+{{ toYaml .Values.resources | indent 10 }}
+{{- end }}
         ports:
         env:
         - name: API_KEY
